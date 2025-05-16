@@ -1,12 +1,11 @@
 import os
 import sys
 from langchain_community.document_loaders import PyPDFLoader
-from pymongo import MongoClient
 import json
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
 from models.crew.crew_pool import analyse_cv
-from mongo_utils import sauvegarder_profil_mongodb, creation_profil
+from mongo_utils import creation_profil
 #############################################################
 
 def load_pdf(pdf_path):
