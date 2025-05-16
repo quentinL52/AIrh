@@ -4,7 +4,6 @@ from .agents import cv_analyzer_agent, job_offer_analyzer_agent, report_generato
 from .tasks import analyze_cv_task, analyze_job_offer_task, generate_report_task, task_parsing, task_extract_skills, task_extract_experience, task_extract_projects, task_extract_education, task_build_profile, task_extract_informations
 
 def run_analysis_crew(cv_content: str, job_offer_content: str) -> str:
-
     analysis_crew = Crew(
         agents=[cv_analyzer_agent, job_offer_analyzer_agent, report_generator_agent],
         tasks=[analyze_cv_task, analyze_job_offer_task, generate_report_task],
