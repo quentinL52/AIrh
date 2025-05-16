@@ -17,7 +17,7 @@ def load_pdf(pdf_path):
         cv_text += page.page_content + "\n\n"
     return cv_text
 
-pdf_path = r'data\CV - Quentin Loumeau.pdf'
+pdf_path = r'data\CV-test.pdf'
 json_path = r'data\cv_profile.json'
 cv_text = load_pdf(pdf_path)
 
