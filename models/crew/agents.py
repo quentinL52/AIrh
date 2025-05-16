@@ -1,29 +1,5 @@
 from crewai import Agent
 
-cv_analyzer_agent = Agent(
-    role='Analyste de CV Senior',
-    goal='Analyser de manière exhaustive le CV fourni pour en extraire les compétences clés, l\'expérience pertinente et les differents projets ainsi que l\'experience du candidat.',
-    backstory=(
-        "Expert en recrutement avec une décennie d'expérience dans l'analyse fine de CVs "
-        "pour identifier les meilleurs talents. Reconnu pour sa capacité à déceler rapidement "
-        "les forces et faiblesses d'un profil candidat."
-    ),
-    allow_delegation=False,
-    verbose=False
-)
-
-job_offer_analyzer_agent = Agent(
-    role='Spécialiste en Analyse d\'Offres d\'Emploi',
-    goal='Décortiquer l\'offre d\'emploi fournie pour identifier les exigences clés, les responsabilités, la culture d\'entreprise implicite et le profil candidat idéal.',
-    backstory=(
-        "Consultant RH spécialisé dans la compréhension et la traduction des besoins des entreprises "
-        "en descriptions de postes claires et précises. Excelle à identifier les critères essentiels "
-        "d'une offre d'emploi."
-    ),
-    allow_delegation=False,
-    verbose=False
-)
-
 # Interview Simulation Agents
 report_generator_agent = Agent(
     role='Rédacteur de Rapports Synthétiques',
