@@ -4,6 +4,7 @@ load_dotenv()
 from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 from typing import Dict, List, Any, Tuple, Optional, Type
+from crewai import LLM
 #########################################################################################################
 # formatage du json
 def format_cv(document):
@@ -49,6 +50,15 @@ model_google = "gemini-2.0-flash"
 def chat_gemini():
     llm = ChatGoogleGenerativeAI(model=model_google)
     return llm
+
+def agents_model():
+    gemini_llm = LLM(
+        model=f"gemini/{model_google}",
+        api=GEMINI_API_KEY,
+        température=0)
+    return gemini_llm 
+    
+        
 
       
         
