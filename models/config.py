@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 from langchain_groq import ChatGroq
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_google_genai import ChatGoogleGenerativeAI
 from typing import Dict, List, Any, Tuple, Optional, Type
 from crewai import LLM
@@ -36,7 +37,14 @@ def format_cv(document):
 def read_system_prompt(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
-    
+
+def load_pdf(pdf_path):
+    loader = PyPDFLoader(pdf_path)
+    pages = loader.load_and_split()
+    cv_text = ""
+    for page in pages:
+        cv_text += page.page_content + "\n\n"
+    return cv_text    
 #########################################################################################################        
 # modéles 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
@@ -57,9 +65,6 @@ def agents_model():
         api=GEMINI_API_KEY,
         température=0)
     return gemini_llm 
-    
-        
-
       
         
 

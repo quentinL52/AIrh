@@ -1,6 +1,6 @@
 from crewai import Task
-from .agents import cv_analyzer_agent, job_offer_analyzer_agent, report_generator_agent, cv_parser_agent, skills_extractor_agent, experience_extractor_agent, project_extractor_agent, education_extractor_agent, ProfileBuilderAgent, informations_personnelle_agent
-
+from .agents import report_generator_agent, cv_parser_agent, skills_extractor_agent, experience_extractor_agent, project_extractor_agent, education_extractor_agent, ProfileBuilderAgent, informations_personnelle_agent
+'''
 analyze_cv_task = Task(
     description=(
         "Analyser le contenu du CV suivant : \n\n"
@@ -25,8 +25,8 @@ analyze_job_offer_task = Task(
         "Un résumé structuré des exigences et caractéristiques du poste, incluant responsabilités, "
         "compétences must-have et nice-to-have, et niveau d'expérience attendu."
     ),
-    agent=job_offer_analyzer_agent
-)
+    agent=job_offer_analyzer_agent)'''
+
 
 generate_report_task = Task(
     description=(
@@ -131,7 +131,7 @@ task_extract_informations = Task(
 task_build_profile = Task(
     description=(
         "Créer un profil structuré pour le candidat en récupérant les informations extraites par les agents précédents. "
-        "Le profil doit inclure les informations personneles, les compétences, expériences, projets et formations sous forme de JSON."
+        "Le profil doit inclure les informations personnelles, les compétences, expériences, projets et formations sous forme de JSON."
     ),
     agent=ProfileBuilderAgent,
     context=[
@@ -141,6 +141,6 @@ task_build_profile = Task(
         task_extract_education,
         task_extract_informations
     ],
-    expected_output= "Une liste de dictionnaires JSON pur sans balises ni commentaires adapté pour l'encodage en utf8 et sans apostrophes ni caractéres speciaux et avec les différentes section extraite par les autres agents, le json extrait doit avoir pour clé 'candidat'",
+    expected_output= "retourne uniquement les dictionnaire JSON, sans en tete de fichier.Générer uniquement le contenu JSON brut pour la clé 'candidat', SANS aucun encadrement JSON (par exemple, pas de `{}` externes, pas de `json`, pas de ```json```). Le résultat doit être directement le dictionnaire pour 'candidat', encodé en UTF-8, sans apostrophes, ni caractères spéciaux.",
     output_file= f"data/cv_profile.json"
 )

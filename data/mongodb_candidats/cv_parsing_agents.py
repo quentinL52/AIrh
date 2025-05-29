@@ -1,30 +1,27 @@
 import os
 import sys
 from langchain_community.document_loaders import PyPDFLoader
-import json
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
 from models.crew.crew_pool import analyse_cv
-from mongo_utils import creation_profil
-#############################################################
+from models.config import load_pdf
+from data.mongodb_candidats.mongo_utils import MongoManager
+manager = MongoManager()
 
-def load_pdf(pdf_path):
-    loader = PyPDFLoader(pdf_path)
-    pages = loader.load_and_split()
-    cv_text = ""
-    for page in pages:
-        cv_text += page.page_content + "\n\n"
-    return cv_text
+class CvParserAgent:
+    def __init__(self, pdf_path: str, json_path: str):
+        self.pdf_path = pdf_path
+        self.json_path = json_path
 
-pdf_path = r'data\CV-test.pdf'
-json_path = r'data\cv_profile.json'
-cv_text = load_pdf(pdf_path)
-
+    def process(self) -> str:
+        print(f"Début du traitement du CV : {self.pdf_path}")
+        cv_text_content = load_pdf(self.pdf_path)
+        analyse_cv(cv_text_content)
+        manager.create_profile_from_json(self.json_path)
+        return self.json_path
 
 if __name__ == "__main__":
-    chemin_cv = pdf_path 
-    cv_text_content = load_pdf(chemin_cv)
-    analyse_cv(cv_text_content)
-    cv_json = json_path 
-    creation_profil(cv_json)
-    print("Le traitement du CV est terminé.")
+    pdf_file = r'data\CV - Quentin Loumeau.pdf'
+    json_file = r'data\cv_profile.json'
+    cv_agent = CvParserAgent(pdf_file, json_file)
+    json_output_path = cv_agent.process()

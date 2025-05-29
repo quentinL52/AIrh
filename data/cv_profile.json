@@ -1,0 +1,148 @@
+```json
+{
+  "candidat": {
+    "personal_information": {
+      "nom": "Quentin Loumeau",
+      "email": "quentin_loumeau@proton.me",
+      "numero_de_telephone": "06 43 40 67 24",
+      "localisation": "Île-de-France"
+    },
+    "skills": {
+      "hard_skills": [
+        "Programmation en Python",
+        "Traitement des données avec Pandas",
+        "Requêtage en SQL",
+        "MySQL",
+        "Windows functions",
+        "CTE",
+        "Jointures",
+        "Tableaux de bord",
+        "PowerBi",
+        "Modélisation des données structurées",
+        "Machine Learning",
+        "Scikit-learn",
+        "Collecte des données avec le Webscrapping",
+        "BeautifulSoup",
+        "Selenium",
+        "Gestion de projet avec la méthode SCRUM",
+        "Techniques de vectorisation",
+        "Pinecone",
+        "LangChain",
+        "API GROQ",
+        "Prompt Engineering",
+        "DataIku",
+        "Pyspark",
+        "DBT",
+        "TensorFlow",
+        "DeepLearning",
+        "Google Cloud Platform",
+        "DOCKER",
+        "Mage.AI",
+        "minIO",
+        "Postgres",
+        "Langgraph",
+        "CrewAI",
+        "Excel",
+        "PEP 8",
+        "RGPD",
+        "AWS"
+      ],
+      "soft_skills": [
+        "Méthode agile",
+        "Adaptabilité",
+        "Veille technologique",
+        "Apprentissage constant",
+        "Curiosité",
+        "Esprit d’équipe",
+        "Autonomie",
+        "Rigueur",
+        "Responsabilités"
+      ]
+    },
+    "experience": [
+      {
+        "title": "Pâtissier",
+        "company": null,
+        "start_date": "2009",
+        "end_date": "2023",
+        "responsibilities": [
+          "Analyse des ventes",
+          "Management",
+          "Optimisation des processus",
+          "Travail à l'étranger (Angleterre, Suède et Australie)"
+        ]
+      },
+      {
+        "title": "Alternant Data Analyst",
+        "company": "Enedis, Direction Audit Contrôle Interne Risques (DACIR)",
+        "start_date": "Decembre 2024",
+        "end_date": "Present",
+        "responsibilities": [
+          "Développement d'analyses de données et visualisations au service des 150 collaborateurs de la filière Risk Management",
+          "Optimisation des flux de traitement de données avec Dataiku et création de tableaux de bord dynamiques (PowerBI) pour les différents besoins du contrôle interne.",
+          "Assistance technique aux contrôleurs et auditeurs internes dans l'exploitation des données et l'interprétation des résultats analytiques.",
+          "Participation à l'évaluation de solutions innovantes (process-mining, IA générative) pour renforcer l'efficacité des activités d'audit",
+          "Manipulation avancée de données complexes et création de modèles d'analyse sous Excel et Dataiku"
+        ]
+      }
+    ],
+    "projects": {
+      "professional": [
+        {
+          "title": "Data Jobs",
+          "role": "Scrum Master",
+          "technologies": [
+            "BeautifulSoup",
+            "Selenium",
+            "Vector store Pinecone",
+            "LangChain",
+            "API GROQ",
+            "IA générative"
+          ],
+          "outcomes": [
+            "Collecte d’offres d’emplois en utilisant des techniques de webscrapping",
+            "Developpement d’un modéle d’IA pour la recommendation d’offre d’emplois a partir d’un CV",
+            "Optimisation des resultats du modéle avec des techniques de Prompt Engineering",
+            "Pilotage des sprint en tant que Scrum Master"
+          ]
+        },
+        {
+          "title": "AIrh",
+          "role": "Design thinking, pilotage du projet",
+          "technologies": [
+            "Mage.AI",
+            "minIO",
+            "Postgres",
+            "Langgraph",
+            "crewAI",
+            "TensorFlow",
+            "Deep Learning"
+          ],
+          "outcomes": [
+            "Design thinking, pilotage du projet et creation d’un business plan",
+            "Devellopement d’un pipeline de données et automatization de la collecte",
+            "Création d’agent pour la simulation d’entretient",
+            "Optimisation du modéle avec du Deep Learning",
+            "Communication sur le projet (point hebdomadaire , collecte de feedback autour de la problématique )"
+          ]
+        }
+      ],
+      "personal": []
+    },
+    "education": [
+      {
+        "degree": "Data analyst Titre professionnel RNCP niveau 6 (bac+3)",
+        "institution": "WILD CODE SCHOOL",
+        "start_date": "02/24",
+        "end_date": "07/24"
+      },
+      {
+        "degree": "Alternance Chef de Projet IA Titre professionnel RNCP niveau 7 (bac+5)",
+        "institution": null,
+        "start_date": "Decembre 2024",
+        "end_date": "Present"
+      }
+    ]
+  }
+}
+```
